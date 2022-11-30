@@ -17,7 +17,6 @@ import EventIcon from "@material-ui/icons/Event";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import { Typography } from "@material-ui/core";
 import { createOrder, clearErrors } from "../../actions/orderAction.js";
-
 // import clearErrors from "../../actions/orderAction";
 const Payment = ({ history }) => {
   const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));

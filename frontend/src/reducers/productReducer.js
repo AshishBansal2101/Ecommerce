@@ -72,7 +72,6 @@ export const productsReducer = (state = { products: [] }, action) => {
 };
 
 export const newProductReducer = (state = { product: {} }, action) => {
-  console.log("heeeeee");
   switch (action.type) {
     case NEW_PRODUCT_REQUEST:
       return {

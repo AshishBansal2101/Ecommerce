@@ -28,21 +28,21 @@ const Sidebar = () => {
           defaultCollapseIcon={<ExpandMoreIcon />}
           defaultExpandIcon={<ImportExportIcon />}
         >
-          <TreeItem nodeId="1" label="Requests">
+          <TreeItem nodeId="1" label="Products">
             <Link to="/admin/products">
               <TreeItem nodeId="2" label="All" icon={<PostAddIcon />} />
             </Link>
-            {/* 
+
             <Link to="/admin/product">
               <TreeItem nodeId="3" label="Create" icon={<AddIcon />} />
-            </Link> */}
+            </Link>
           </TreeItem>
         </TreeView>
       </Link>
       <Link to="/admin/orders">
         <p>
           <ListAltIcon />
-          Donations
+          Orders
         </p>
       </Link>
       <Link to="/admin/users">
@@ -50,12 +50,12 @@ const Sidebar = () => {
           <PeopleIcon /> Users
         </p>
       </Link>
-      {/* <Link to="/admin/reviews">
+      <Link to="/admin/reviews">
         <p>
           <RateReviewIcon />
           Reviews
         </p>
-      </Link> */}
+      </Link>
     </div>
   );
 };

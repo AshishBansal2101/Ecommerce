@@ -17,9 +17,8 @@ const Shipping = ({ history }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
   const { shippingInfo } = useSelector((state) => state.cart);
-  console.log("hello", shippingInfo);
-  const [address, setAddress] = useState(shippingInfo.address);
 
+  const [address, setAddress] = useState(shippingInfo.address);
   const [city, setCity] = useState(shippingInfo.city);
   const [state, setState] = useState(shippingInfo.state);
   const [country, setCountry] = useState(shippingInfo.country);
@@ -28,7 +27,7 @@ const Shipping = ({ history }) => {
 
   const shippingSubmit = (e) => {
     e.preventDefault();
-    console.log("hello", shippingInfo);
+
     if (phoneNo.length < 10 || phoneNo.length > 10) {
       alert.error("Phone Number should be 10 digits Long");
       return;
@@ -61,17 +60,6 @@ const Shipping = ({ history }) => {
               />
             </div>
 
-            {/* <div>
-              <HomeIcon />
-              <input
-                type="text"
-                placeholder="Address"
-                required
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
-              />
-            </div> */}
-
             <div>
               <LocationCityIcon />
               <input
@@ -92,7 +80,6 @@ const Shipping = ({ history }) => {
                 onChange={(e) => setPinCode(e.target.value)}
               />
             </div>
-
             <div>
               <PhoneIcon />
               <input
