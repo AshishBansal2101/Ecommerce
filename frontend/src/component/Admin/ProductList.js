@@ -61,7 +61,7 @@ const ProductList = ({ history }) => {
     },
     {
       field: "stock",
-      headerName: "Stock",
+      headerName: "F.Income",
       type: "number",
       minWidth: 150,
       flex: 0.3,
@@ -69,7 +69,7 @@ const ProductList = ({ history }) => {
 
     {
       field: "price",
-      headerName: "Price",
+      headerName: "Amount",
       type: "number",
       minWidth: 270,
       flex: 0.5,
@@ -121,7 +121,7 @@ const ProductList = ({ history }) => {
       <div className="dashboard">
         <SideBar />
         <div className="productListContainer">
-          <h1 id="productListHeading">ALL PRODUCTS</h1>
+          <h1 id="productListHeading">ALL REQUESTS</h1>
 
           <DataGrid
             rows={rows}

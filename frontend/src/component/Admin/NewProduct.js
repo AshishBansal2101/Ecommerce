@@ -10,7 +10,7 @@ import DescriptionIcon from "@material-ui/icons/Description";
 import StorageIcon from "@material-ui/icons/Storage";
 import SpellcheckIcon from "@material-ui/icons/Spellcheck";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
-import SideBar from "./Sidebar";
+// import SideBar from "./Sidebar";
 import { NEW_PRODUCT_RESET } from "../../constants/productConstants";
 
 const NewProduct = ({ history }) => {
@@ -27,15 +27,7 @@ const NewProduct = ({ history }) => {
   const [images, setImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
 
-  const categories = [
-    "Laptop",
-    "Footwear",
-    "Bottom",
-    "Tops",
-    "Attire",
-    "Camera",
-    "SmartPhones",
-  ];
+  const categories = ["SC", "ST", "OBC", "EWS", "GENERAL", "KM", "TFW"];
 
   useEffect(() => {
     if (error) {
@@ -91,20 +83,20 @@ const NewProduct = ({ history }) => {
     <Fragment>
       <MetaData title="Create Product" />
       <div className="dashboard">
-        <SideBar />
+        {/* <SideBar /> */}
         <div className="newProductContainer">
           <form
             className="createProductForm"
             encType="multipart/form-data"
             onSubmit={createProductSubmitHandler}
           >
-            <h1>Create Product</h1>
+            <h1>Request Donation</h1>
 
             <div>
               <SpellcheckIcon />
               <input
                 type="text"
-                placeholder="Product Name"
+                placeholder="Donation Name"
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -114,7 +106,7 @@ const NewProduct = ({ history }) => {
               <AttachMoneyIcon />
               <input
                 type="number"
-                placeholder="Price"
+                placeholder="Amount"
                 required
                 onChange={(e) => setPrice(e.target.value)}
               />
@@ -124,7 +116,7 @@ const NewProduct = ({ history }) => {
               <DescriptionIcon />
 
               <textarea
-                placeholder="Product Description"
+                placeholder="Request Description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 cols="30"
@@ -135,7 +127,7 @@ const NewProduct = ({ history }) => {
             <div>
               <AccountTreeIcon />
               <select onChange={(e) => setCategory(e.target.value)}>
-                <option value="">Choose Category</option>
+                <option value="">Category</option>
                 {categories.map((cate) => (
                   <option key={cate} value={cate}>
                     {cate}
@@ -148,13 +140,13 @@ const NewProduct = ({ history }) => {
               <StorageIcon />
               <input
                 type="number"
-                placeholder="Stock"
+                placeholder="Family Income Monthly"
                 required
                 onChange={(e) => setStock(e.target.value)}
               />
             </div>
 
-            <div id="createProductFormFile">
+            {/* <div id="createProductFormFile">
               <input
                 type="file"
                 name="avatar"
@@ -162,13 +154,13 @@ const NewProduct = ({ history }) => {
                 onChange={createProductImagesChange}
                 multiple
               />
-            </div>
+            </div> */}
 
-            <div id="createProductFormImage">
+            {/* <div id="createProductFormImage">
               {imagesPreview.map((image, index) => (
                 <img key={index} src={image} alt="Product Preview" />
               ))}
-            </div>
+            </div> */}
 
             <Button
               id="createProductBtn"

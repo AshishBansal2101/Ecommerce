@@ -84,7 +84,7 @@ export const createProduct = (productData) => async (dispatch) => {
     const config = {
       headers: { "Content-Type": "application/json" },
     };
-
+    console.log("here am i");
     const { data } = await axios.post(
       `/api/v1/admin/product/new`,
       productData,

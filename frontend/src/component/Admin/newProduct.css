@@ -1,11 +1,22 @@
+.dashboard {
+  display: flex;
+  height: 100%;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  background-image: url("https://www.wikihow.com/images/thumb/7/7c/Format-a-Donation-Request-Letter-Step-16.jpg/aid1480513-v4-1200px-Format-a-Donation-Request-Letter-Step-16.jpg");
+}
 .newProductContainer {
   width: 100%;
   box-sizing: border-box;
-  background-color: rgb(221, 221, 221);
+
   border-left: 1px solid rgba(0, 0, 0, 0.158);
   display: flex;
-  flex-direction: column;
-  height: 100vh;
+  /* flex-direction: column; */
+  /* align-items: center;
+  justify-content: center; */
+  height: 70vh;
 }
 .newProductContainer h1 {
   color: rgba(0, 0, 0, 0.733);
@@ -19,9 +30,9 @@
   align-items: center;
   margin: auto;
   padding: 3vmax;
-  justify-content: space-evenly;
-  height: 70%;
-  width: 40vh;
+  justify-content: center;
+  height: 100%;
+  width: 70vh;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.267);
 }

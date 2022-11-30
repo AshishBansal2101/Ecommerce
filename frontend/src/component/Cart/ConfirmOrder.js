@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import CheckoutSteps from "../Cart/CheckoutSteps";
 import { useSelector } from "react-redux";
 import MetaData from "../layout/MetaData";
@@ -10,20 +10,22 @@ const ConfirmOrder = ({ history }) => {
   const { shippingInfo, cartItems } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.user);
 
-  const subtotal = cartItems.reduce(
-    (acc, item) => acc + item.quantity * item.price,
-    0
-  );
-  const shippingCharges = subtotal > 1000 ? 0 : 200;
-  const tax = subtotal * 0.18;
-  const totalPrice = subtotal + tax + shippingCharges;
+  // const subtotal = cartItems.reduce(
+  //   (acc, item) => acc + item.quantity * item.price,
+  //   0
+  // );
+  const [subtotal, setSubtotal] = useState(0);
+  // subtotal = parseInt(subtotal, 10);
+  // const shippingCharges = subtotal > 1000 ? 0 : 200;
+  // const tax = subtotal * 0.18;
+  const totalPrice = subtotal;
   const address = `${shippingInfo.address},${shippingInfo.city},${shippingInfo.state},${shippingInfo.pinCode},${shippingInfo.country}`;
 
   const proceedToPayment = () => {
     const data = {
       subtotal,
-      shippingCharges,
-      tax,
+      // shippingCharges,
+      // tax,
       totalPrice,
     };
     sessionStorage.setItem("orderInfo", JSON.stringify(data));
@@ -54,7 +56,7 @@ const ConfirmOrder = ({ history }) => {
               </div>
             </div>
           </div>
-          <div className="confirmCartItems">
+          {/* <div className="confirmCartItems">
             <Typography>Your Cart Items:</Typography>
             <div className="confirmCartItemsContainer">
               {cartItems &&
@@ -71,7 +73,7 @@ const ConfirmOrder = ({ history }) => {
                   </div>
                 ))}
             </div>
-          </div>
+          </div> */}
         </div>
         {/* */}
         <div>
@@ -82,20 +84,32 @@ const ConfirmOrder = ({ history }) => {
                 <p>Subtotal:</p>
                 <span>₹{subtotal}</span>
               </div>
+
+              <div>
+                {/* <HomeIcon /> */}
+                <input
+                  type="number"
+                  placeholder="SubTotal"
+                  required
+                  value={subtotal}
+                  onChange={(e) => setSubtotal(e.target.value)}
+                />
+              </div>
+
               <div>
                 <p>Shipping Charges:</p>
-                <span>₹{shippingCharges}</span>
+                {/* <span>₹{shippingCharges}</span> */}
               </div>
               <div>
                 <p>GST:</p>
-                <span>₹{tax}</span>
+                {/* <span>₹{tax}</span> */}
               </div>
             </div>
             <div className="orderSummaryTotal">
               <p>
                 <b>Total:</b>
               </p>
-              <span>₹{totalPrice}</span>
+              {/* <span>₹{totalPrice}</span> */}
             </div>
             <button onClick={proceedToPayment}>Proceed To Payment</button>
           </div>

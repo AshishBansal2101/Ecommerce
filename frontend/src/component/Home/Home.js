@@ -1,7 +1,10 @@
 import React, { Fragment, useEffect } from "react";
 import { CgMouse } from "react-icons/all";
 import "./Home.css";
+import { Link } from "react-router-dom";
 import ProductCard from "./ProductCard.js";
+// import needy from "./needy.js";
+import newProduct from "../Admin/NewProduct.js";
 import MetaData from "../layout/MetaData";
 import { clearErrors, getProduct } from "../../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
@@ -27,8 +30,8 @@ const Home = () => {
         <Fragment>
           <MetaData title="B2Me" />
           <div className="banner">
-            <p>Welcome to B2Me</p>
-            <h1>FIND AMAZING PRODUCTS BELOW</h1>
+            <p>Welcome to Donation-Box</p>
+            <h1>Services Below</h1>
 
             <a href="#container">
               <button>
@@ -36,11 +39,18 @@ const Home = () => {
               </button>
             </a>
           </div>
-          <h2 className="homeHeading">Featured Products</h2>
+          <h2 className="homeHeading">Featured Services</h2>
 
           <div className="container" id="container">
-            {products &&
-              products.map((product) => <ProductCard product={product} />)}
+            {/* {products &&
+              products.map((product) => <ProductCard product={product} />)} */}
+            <Link to="/admin/product">want donation</Link>
+            <Link to="/shipping">give donation</Link>
+            <Link to="/softbook">softbook</Link>
+            <Link to="/hardbook">hardbook</Link>
+            {/* <div className="serviceblock">give donation</div>
+            <div className="serviceblock">upload book soft</div>
+            <div className="serviceblock">donate book hard</div> */}
           </div>
         </Fragment>
       )}
